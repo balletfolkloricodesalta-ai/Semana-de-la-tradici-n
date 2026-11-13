@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#24170f">
+  <meta name="description" content="Una celebración de la danza, la música y las tradiciones argentinas. Gala de cierre de la Semana de la Tradición.">
+  <title>Gala de cierre | Semana de la Tradición</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      color-scheme: dark;
+      --ink: #fff8ed;
+      --muted: #d3c3ae;
+      --gold: #e8b96c;
+      --rust: #9e402b;
+      --night: #24170f;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--night);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif;
+    }
+    a { color: inherit; }
+    .hero {
+      min-height: 100svh;
+      position: relative;
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      isolation: isolate;
+      padding: clamp(24px, 6vw, 82px);
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      z-index: -2;
+      inset: 0;
+      background: url("gala%20de%20cierre.jpeg") center 38% / cover no-repeat;
+      transform: scale(1.015);
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(26, 15, 9, .88) 0%, rgba(26, 15, 9, .58) 48%, rgba(26, 15, 9, .12) 100%),
+                  linear-gradient(0deg, rgba(26, 15, 9, .68), transparent 55%);
+    }
+    .topline {
+      position: absolute;
+      top: clamp(22px, 4vw, 42px);
+      left: clamp(24px, 6vw, 82px);
+      right: clamp(24px, 6vw, 82px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: .72rem;
+      font-weight: 700;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark { width: 9px; height: 9px; border-radius: 50%; background: var(--gold); box-shadow: 0 0 18px #e8b96c88; }
+    .toplink { text-decoration: none; border-bottom: 1px solid #fff8ed88; padding-bottom: 5px; }
+    .hero-copy { max-width: 760px; padding: 82px 0 28px; }
+    .eyebrow {
+      margin: 0 0 19px;
+      color: var(--gold);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+    }
+    h1, h2 { font-family: "Playfair Display", Georgia, serif; font-weight: 500; }
+    h1 { margin: 0; max-width: 700px; font-size: clamp(3.2rem, 8.5vw, 7.3rem); line-height: .98; letter-spacing: -.045em; }
+    h1 span { color: var(--gold); }
+    .intro { max-width: 510px; margin: 25px 0 30px; color: #f0e2d0; font-size: clamp(1rem, 1.6vw, 1.17rem); line-height: 1.75; }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 21px;
+      border: 1px solid var(--gold);
+      border-radius: 2px;
+      color: #24170f;
+      background: var(--gold);
+      font-size: .85rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .button:hover { background: transparent; color: var(--ink); transform: translateY(-2px); }
+    .button .arrow { font-size: 1.15rem; }
+    .scroll-note { position: absolute; right: clamp(24px, 6vw, 82px); bottom: 36px; writing-mode: vertical-rl; color: #f0e2d0; font-size: .68rem; letter-spacing: .18em; text-transform: uppercase; }
+    .story {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(280px, .75fr);
+      gap: clamp(38px, 8vw, 120px);
+      align-items: center;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: clamp(72px, 11vw, 145px) 28px;
+    }
+    .story h2 { margin: 0; font-size: clamp(2.4rem, 5vw, 4.5rem); line-height: 1.08; }
+    .story h2 span { color: var(--gold); }
+    .story-copy p { margin: 0; color: var(--muted); line-height: 1.9; }
+    .story-copy p + p { margin-top: 16px; }
+    .detail { border-top: 1px solid #fff8ed30; margin-top: 26px; padding-top: 18px; color: var(--gold); font-size: .76rem; letter-spacing: .13em; text-transform: uppercase; }
+    footer { border-top: 1px solid #fff8ed20; padding: 25px 28px; color: #bca995; text-align: center; font-size: .8rem; }
+    @media (max-width: 680px) {
+      .hero { min-height: 92svh; padding-bottom: 58px; }
+      .hero::before { background-position: 58% center; }
+      .hero::after { background: linear-gradient(0deg, rgba(26,15,9,.93) 0%, rgba(26,15,9,.68) 52%, rgba(26,15,9,.15) 100%); }
+      .topline { align-items: flex-start; font-size: .62rem; }
+      .toplink { text-align: right; }
+      .hero-copy { padding-top: 100px; }
+      h1 { font-size: clamp(3.4rem, 16vw, 5.7rem); }
+      .intro { line-height: 1.65; }
+      .scroll-note { display: none; }
+      .story { grid-template-columns: 1fr; gap: 24px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } *, *::before, *::after { transition-duration: .01ms !important; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="page-title">
+      <div class="topline">
+        <div class="brand"><span class="brand-mark" aria-hidden="true"></span><span>Semana de la Tradición</span></div>
+        <a class="toplink" href="#celebracion">Una celebración de nuestras raíces</a>
+      </div>
+      <div class="hero-copy">
+        <p class="eyebrow">Danza · Música · Identidad</p>
+        <h1 id="page-title">Gala de <span>cierre</span></h1>
+        <p class="intro">Una noche para encontrarnos con nuestras raíces y celebrar la fuerza de la tradición a través de la danza y la música.</p>
+        <a class="button" href="#celebracion">Descubrí la celebración <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+      <span class="scroll-note" aria-hidden="true">Seguí explorando</span>
+    </section>
+
+    <section class="story" id="celebracion" aria-labelledby="story-title">
+      <div>
+        <p class="eyebrow">El espíritu de la gala</p>
+        <h2 id="story-title">Tradición que se vive, <span>se baila y se comparte.</span></h2>
+      </div>
+      <div class="story-copy">
+        <p>La gala de cierre reúne el trabajo, la pasión y el talento de quienes mantienen viva nuestra cultura. Un encuentro para disfrutar las danzas folklóricas y celebrar todo lo que nos une.</p>
+        <p>Te esperamos para compartir una velada llena de emoción, identidad y orgullo por nuestras tradiciones.</p>
+        <div class="detail">Ballet Folklórico de Salta</div>
+      </div>
+    </section>
+  </main>
+  <footer>Semana de la Tradición · Gala de cierre</footer>
+</body>
+</html>
